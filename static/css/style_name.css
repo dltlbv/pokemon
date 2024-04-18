@@ -1,0 +1,97 @@
+body {
+    font-family:  Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.green {
+    color: #71c874;
+    font-size: 50px;
+    font-weight: 700;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.pokemon-info {
+    display: flex;
+    align-items: center;
+    background-color: #71c874;
+    padding: 30px;
+    border-radius: 25px;
+}
+
+.details {
+    margin-left: 20px;
+}
+
+.details p {
+    margin: 5px 0;
+}
+
+.label {
+    font-weight: bold;
+    color: #333;
+}
+
+img {
+    max-width: 200px;
+    height: auto;
+    margin-right: 20px;
+}
+
+h2 {
+    color: #333;
+    margin-top: 20px;
+}
+
+.evolution-chain {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.evolution-stage {
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.evolution-stage img {
+    max-width: 100px;
+    height: auto;
+}
+
+.pokemon-info img {
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+    background-color: white;
+    padding: 10px;
+}
+
+.evolution-chain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.evolution-stage {
+    text-align: center;
+    margin: 0 20px;
+}
+
+h2 {
+    text-align: center; 
+    margin-bottom: 20px;
+}

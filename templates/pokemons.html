@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='../static/css/style.css')}}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="{{ url_for('static', filename='images/Pokémon_logo.png') }}" alt="Pokémon Logo">
+        </div>
+    </header>
+    
+    <main>
+        <section id="search">
+            <div class="container">
+                <h1>Pokédex Search</h1>
+                <form action="/" method="post">
+                    <label for="name">Enter Pokemon Name:</label>
+                    <input type="text" id="name" name="name">
+                    <button type="submit">Search</button>
+                </form>                
+            </div>
+        </section>
+        
+        <section id="filter">
+            <div class="container">
+                <h2>Filter Pokémon</h2>
+                <form action="/" method="get">
+                    <label for="type">Type:</label>
+                    <select name="type" id="type">
+                        <option value="">-------------</option>\
+                        <option value="normal">Normal</option>
+                        <option value="fire">Fire</option>
+                        <option value="water">Water</option>
+                        <option value="electric">Electric</option>
+                        <option value="grass">Grass</option>
+                        <option value="ice">Ice</option>
+                        <option value="fighting">Fighting</option>
+                        <option value="poison">Poison</option>
+                        <option value="ground">Ground</option>
+                        <option value="flying">Flying</option>
+                        <option value="psychic">Psychic</option>
+                        <option value="bug">Bug</option>
+                        <option value="rock">Rock</option>
+                        <option value="ghost">Ghost</option>
+                        <option value="dragon">Dragon</option>
+                        <option value="dark">Dark</option>
+                        <option value="steel">Steel</option>
+                        <option value="fairy">Fairy</option>
+                    </select>
+
+                    <label for="weakness">Weakness:</label>
+                    <select name="weakness" id="weakness">
+                        <option value="">-------------</option>\
+                        <option value="normal">Normal</option>
+                        <option value="fire">Fire</option>
+                        <option value="water">Water</option>
+                        <option value="electric">Electric</option>
+                        <option value="grass">Grass</option>
+                        <option value="ice">Ice</option>
+                        <option value="fighting">Fighting</option>
+                        <option value="poison">Poison</option>
+                        <option value="ground">Ground</option>
+                        <option value="flying">Flying</option>
+                        <option value="psychic">Psychic</option>
+                        <option value="bug">Bug</option>
+                        <option value="rock">Rock</option>
+                        <option value="ghost">Ghost</option>
+                        <option value="dragon">Dragon</option>
+                        <option value="dark">Dark</option>
+                        <option value="steel">Steel</option>
+                        <option value="fairy">Fairy</option>
+                    </select>
+
+                    <label for="size">Size:</label>
+                    <select name="size" id="size">
+                        <option value="">-------------</option>
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                    </select>
+
+                    <button type="submit">Apply Filters</button>
+                </form>
+            </div>
+        </section>
+        
+        <section id="pokemonList">
+            <div class="container">
+                <h2>Pokémon List</h2>
+                <div class="pokemon">
+                {% if pokemon_data %}
+                    {% for pokemon in pokemon_data %}
+                        <div class="pokemon">
+                            <img src="{{ pokemon.image }}" alt="{{ pokemon.name }}">
+                            <p>{{ pokemon.name }}</p>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No Pokemon found.</p>
+                {% endif %}</div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

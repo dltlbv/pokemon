@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ pokemon_info.name }} Details</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='../static/css/style_name.css')}}">
+</head>
+<body>
+    <div class="container">
+        <p class="green">ID: #{{ pokemon_info.id }}</p>
+        <h1>{{ pokemon_info.name }}</h1>
+        <div class="pokemon-info">
+            <img src="{{ pokemon_info.image }}" alt="{{ pokemon_info.name }}">
+            <div class="details">
+                <p><span class="label">Type:</span> {{ pokemon_info.types }}</p>
+                <p><span class="label">Height:</span> {{ pokemon_info.height }}</p>
+                <p><span class="label">Weight:</span> {{ pokemon_info.weight }}</p>
+                <p><span class="label">Abilities:</span> {{ pokemon_info.abilities }}</p>
+                <p><span class="label">Base Stats:</span> {{ pokemon_info.base_stats }}</p>
+                <p><span class="label">Weakness:</span> {{ pokemon_info.weaknesses }}</p>
+            </div>
+        </div>
+        <h2>Evolution Chain:</h2>
+        <div class="evolution-chain">
+            {% if pokemon_info.evolution_chain %}
+                {% for evolution_stage in pokemon_info.evolution_chain %}
+                    <div class="evolution-stage">
+                        <img src="{{ evolution_stage.image }}" alt="{{ evolution_stage.name }}">
+                        <p>{{ evolution_stage.name }}</p>
+                    </div>
+                    <div class="evolution-arrow"></div>
+                {% endfor %}
+            {% else %}
+                <p>No evolution data available for this Pokémon.</p>
+            {% endif %}
+        </div>
+        
+    </div>
+</body>
+</html>
